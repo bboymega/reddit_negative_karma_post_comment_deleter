@@ -1,4 +1,10 @@
 import praw
+import praw
+from datetime import datetime
+now = datetime.now()
+dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+print(dt_string)
+print()
 print("Delete comments/posts with negative/zero karma")
 reddit = praw.Reddit(client_id='',
              client_secret='',
@@ -24,3 +30,5 @@ for post in posts:
        print("[",post.title,"]","is being deleted.")
        post.delete()
 print(i," Post(s) completed")
+print()
+
